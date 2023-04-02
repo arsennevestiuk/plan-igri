@@ -1,0 +1,2 @@
+# plan-igri
+prosto plan
