@@ -4,6 +4,8 @@ import time
 pygame.init()
  
 clock = pygame.time.Clock()
+n1 = ("1")
+red = (255,0,0)
 r = 0
 coins = 0
 w = 800
@@ -79,23 +81,24 @@ def main_loop():
                             cost2 = cost2 * 1.5
                             r = r + 0.5
                             cost2 = round(cost2, 0)
- 
-                if coins >= 10:
+                   
                     
 
+
                 if coins >= 1000000:
-                    print("Уріа")
+                    print("WIN")
                     game = False
  
   
 
         Display.fill(bl)
         DrawText("Клікер", black, bl, 400, 50, 50)
+        DrawText("Твій рівень: " + str(n1), black, bl, 100,100,20)
         DrawText("Баланс: " + str(f'{coins:.2f}'), black, bl, 100, 200, 30)
         DrawText("улутшіті клукер " + str(cost), black,giga , 700, 300, 20)
         DrawText("авто клікер " + str(cost2), black,giga , 150, 350, 35)
         rectangle(Display, white, 50, 400, 200, 100)
-        circle(Display,fdmgoi , 400, 260, 40)
+        circle(Display,black , 400, 260, 40)
         rectangle(Display, white, 600, 320, 200, 100)
         pygame.display.update()
         clock.tick(60)
