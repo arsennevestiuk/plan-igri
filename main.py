@@ -4,7 +4,7 @@ import time
 pygame.init()
  
 clock = pygame.time.Clock()
-n1 = ("1")
+n = 1
 red = (255,0,0)
 r = 0
 coins = 0
@@ -18,7 +18,8 @@ fdmgoi = (0,0,0)
  
 Display = pygame.display.set_mode((w,h))
 pygame.display.set_caption("Клукер")
- 
+
+
 def circle(display, color, x, y, radius):
     pygame.draw.circle(display, color, [x, y], radius)
  
@@ -29,7 +30,7 @@ def autominer():
     coins = coins + r
  
  
-def DrawText(text, Textcolor, Rectcolor, x, y, fsize):
+def Draw(text, Textcolor, Rectcolor, x, y, fsize):
     font = pygame.font.Font('freesansbold.ttf', fsize)
     text = font.render(text, True, Textcolor, Rectcolor)
     textRect = text.get_rect()
@@ -82,7 +83,11 @@ def main_loop():
                             r = r + 0.5
                             cost2 = round(cost2, 0)
                    
-                    
+
+
+
+
+            
 
 
                 if coins >= 1000000:
@@ -92,11 +97,11 @@ def main_loop():
   
 
         Display.fill(bl)
-        DrawText("Клікер", black, bl, 400, 50, 50)
-        DrawText("Твій рівень: " + str(n1), black, bl, 100,100,20)
-        DrawText("Баланс: " + str(f'{coins:.2f}'), black, bl, 100, 200, 30)
-        DrawText("улутшіті клукер " + str(cost), black,giga , 700, 300, 20)
-        DrawText("авто клікер " + str(cost2), black,giga , 150, 350, 35)
+        Draw("Клікер", black, bl, 400, 50, 50)
+        Draw("Твій рівень: " + str(n), black,bl , 150, 100, 40)
+        Draw("Баланс: " + str(f'{coins:.2f}'), black, bl, 150, 200, 30)
+        Draw("улутшіті клукер " + str(cost), black,giga , 700, 300, 20)
+        Draw("авто клікер " + str(cost2), black,giga , 150, 350, 35)
         rectangle(Display, white, 50, 400, 200, 100)
         circle(Display,black , 400, 260, 40)
         rectangle(Display, white, 600, 320, 200, 100)
@@ -105,5 +110,3 @@ def main_loop():
  
  
 main_loop()
-pygame.quit()
-quit()
